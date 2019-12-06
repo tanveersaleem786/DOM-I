@@ -142,4 +142,31 @@ footerP.textContent = siteContent['footer']['copyright'];
 // Stretch
  //document.querySelector('body').style.backgroundColor = 'lightgray';
 
+ const siteNewContent = {
+ 
+  "cta": {
+    "h1": "DOM Is Excellent",
+    "button": "Get Started",
+    "img-src": "img/header-new.png"
+  },
+};
+
+ctaButton.addEventListener('click', event => {
+
+  // Navigation Links.
+  let navigationLinks = document.querySelectorAll('nav a');
+
+  for(let i = 0; i < navigationLinks.length; i++)
+  {
+    navigationLinks[i].style.color = "red";
+  }
+
+  // Change cta heading.
+  ctaHeading.innerHTML = siteNewContent['cta']['h1'].replace(/ /g,'<br>');
+
+  // Change header image.
+  headerImage.setAttribute('src', siteNewContent["cta"]["img-src"]);
+
+});
+
 
